@@ -19,7 +19,7 @@ public class PdfUtil {
 		    // Obtém os dados principais do JSON fora de "units"
 		    String condoName = jsonResponse.optString("condo_name", "N/A");
 		    String period = jsonResponse.optString("period", "N/A");
-		    double totalEnergySpot = jsonResponse.optDouble("total_energy_spot", 0);
+		    double totalEnergySpot = jsonResponse.optDouble("total_empresa", 0);
 		    double totalCondo = jsonResponse.optDouble("total_condo", 0);
 		    double totalConsumo = jsonResponse.optDouble("total_consumo", 0);
 		    double totalUnity = jsonResponse.optDouble("total_unity", 0);
@@ -41,7 +41,7 @@ public class PdfUtil {
 		    // Informações principais
 		    document.add(new Paragraph("Condomínio:    " + condoName, normalFont));
 		    document.add(new Paragraph("Período:       " + period, normalFont));
-		    document.add(new Paragraph(String.format("Total EnergySpot: R$ %.2f", totalEnergySpot), normalFont));
+		    document.add(new Paragraph(String.format("Total Empresa: R$ %.2f", totalEnergySpot), normalFont));
 		    document.add(new Paragraph(String.format("Total Condomínio: R$ %.2f", totalCondo), normalFont));
 		    document.add(new Paragraph(String.format("Total Consumo: %.2f kWh", totalConsumo), normalFont));
 		    document.add(new Paragraph(String.format("Total Unidade:   R$ %.2f", totalUnity), normalFont));
@@ -53,7 +53,7 @@ public class PdfUtil {
 		    table.setWidths(new float[]{2, 1.5f, 1.5f, 1.5f, 1}); // Largura de cada coluna
 
 		    Font tableHeaderFont = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD);
-		    addTableHeader(table, tableHeaderFont, "Usuário", "Eqpto", "Vaga", "Consumo", "Total EnergySpot");
+		    addTableHeader(table, tableHeaderFont, "Usuário", "Eqpto", "Vaga", "Consumo", "Total Empresa");
 
 		    Font tableFont = new Font(Font.FontFamily.HELVETICA, 12);
 
