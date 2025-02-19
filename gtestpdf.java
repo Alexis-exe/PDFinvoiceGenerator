@@ -17,7 +17,7 @@
         invoiceData.put("total_consumo", condo.getDouble("total_consumer_kwa"));
         invoiceData.put("total_condo", condo.getDouble("total_condo"));
         invoiceData.put("total_unity", condo.getDouble("total_unity"));
-        invoiceData.put("total_energy_spot", condo.getDouble("total_es"));
+        invoiceData.put("total_energy_spot", condo.getDouble("total_empresa"));
 
         // Criação do array de unidades (condo_unities)
         JSONArray unitsData = new JSONArray();
@@ -29,7 +29,7 @@
             unitData.put("total_consumo", unit.getDouble("total_consumer_kwa"));
             unitData.put("total_condo", unit.getDouble("total_condo"));
             unitData.put("total_unity", unit.getDouble("total_unity"));
-            unitData.put("total_es", unit.getDouble("total_es"));
+            unitData.put("total_es", unit.getDouble("total_empresa"));
             
             unitsData.put(unitData);
         }
